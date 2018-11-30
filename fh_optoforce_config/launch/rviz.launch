@@ -1,0 +1,5 @@
+<launch>
+    <arg name="rviz_config" default="$(find fh_optoforce_config)/config/optoforce_hand.rviz"/>
+
+    <node name="rviz_optoforce" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
+</launch>
