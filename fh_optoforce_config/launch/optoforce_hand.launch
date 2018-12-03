@@ -1,6 +1,6 @@
 <launch>
   <arg name="rviz" default="true"/>
-  <arg name="port" default="/dev/optoforce/optoforce_ONR0A007"/>
+  <arg name="port" default="/dev/optoforce/optoforce_SHA0A001"/>
 
   <include file="$(find optoforce)/launch/optoforce.launch">
     <arg name="port" value="$(arg port)" />
