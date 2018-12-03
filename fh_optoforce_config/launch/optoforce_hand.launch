@@ -1,0 +1,18 @@
+<launch>
+  <arg name="rviz" default="true"/>
+  <arg name="port" default="/dev/optoforce/optoforce_SHA0A001"/>
+
+  <include file="$(find optoforce)/launch/optoforce.launch">
+    <arg name="port" value="$(arg port)" />
+    <arg name="scaling_file" value="$(find fh_optoforce_config)/config/multi_channel_3_axis_generic_scale.yaml" />
+  </include>
+
+  <include if="$(arg rviz)" file="$(find fh_optoforce_config)/launch/rviz.launch">
+    <arg name="rviz_config" value="$(find fh_optoforce_config)/config/optoforce_hand.rviz"/>
+  </include>
+
+  <!-- Static transforms form Optoforce sensor to finger tip -->
+  <node name="optoforce_0_broadcaster" pkg="tf" type="static_transform_publisher" args="0 0 0 0 2.36 1.57 H0_F0_optoforce optoforce_0 100" />
+  <node name="optoforce_1_broadcaster" pkg="tf" type="static_transform_publisher" args="0 0 0 0 2.36 1.57 H0_F1_optoforce optoforce_1 100" />
+  <node name="optoforce_2_broadcaster" pkg="tf" type="static_transform_publisher" args="0 0 0 0 2.36 1.57 H0_F2_optoforce optoforce_2 100" />
+</launch>
