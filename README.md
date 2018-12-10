@@ -9,3 +9,5 @@ that include the calibration sensitivity data. Check at the back of sensor board
 
 # Update serial port number
 Go to fh_optoforce_config/launch/optoforce_hand.launch file and update the port argument with the proper port number that is assigined to the device when you connect the optoforce device on your computer. To get this number navigate to /dev/optoforce/ after connecting the device and note the number. Then use this number on the second line of the launch file and replace the port. 
+
+When you finish, create a new branch with the your changes named after the project the sensors belong to e.g. igrasp
